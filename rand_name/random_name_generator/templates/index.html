@@ -1,2 +1,17 @@
-<h1>Your random name:</h1>
-<h3>{{random_name}}</h3>
+<html>
+    <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+
+    <script>
+        $(function() {
+            $('.generate').click(function() {
+                $.get('/api/generate?format=json', function(data) {
+                    $('.random_name').html(data.random_name)
+                });
+            });
+        });
+    </script>
+
+    <h1>Your random name:</h1>
+    <h3 class="random_name">{{random_name}}</h3>
+    <button class="generate">Generate</button>
+</html>
