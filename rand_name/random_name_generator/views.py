@@ -53,7 +53,7 @@ class RandNameGeneratorView(TemplateView):
 
     def get_context_data(self):
         context = super(RandNameGeneratorView, self).get_context_data()
-        context['random_name'] = self.generate_name(randint(4, 15))
+        context['random_name'] = self.generate_name(randint(4, 10))
         return context
 
 
